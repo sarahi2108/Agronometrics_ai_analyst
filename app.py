@@ -12,13 +12,11 @@ from openai import OpenAI
 # -----------------------------
 # 🔑 CONFIG
 # -----------------------------
-import os
-
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 CSRFTOKEN = st.secrets["CSRFTOKEN"]
 SESSIONID = st.secrets["SESSIONID"]
 
-client = OpenAI(api_key=OPENAI_API_KEY)
+
 
 # -----------------------------
 # FORMAT FUNCTION (NEW 🔥)
@@ -345,7 +343,7 @@ if run:
         else:
             display_df["value"] = display_df["value"].round(2)
 
-        st.subheader(" Data  ")
+        st.subheader("Data  ")
         st.dataframe(display_df[["real_date", "value"]])
 
                 # CHART
